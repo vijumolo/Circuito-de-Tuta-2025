@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Circuito Ciclístico Nacional 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #f8f9fa; 
+            color: #212529;
+        }
+        .header { 
+            background-color: #dc3545; /* Red vibrant */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo { 
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        .table th { 
+            background-color: #28a745; /* Green vibrant */
+            color: white;
+        }
+        .table td { 
+            color: #212529;
+        }
+        .clear-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Timers Colombia's Team TCT Logo" class="logo" onerror="this.style.display='none';">
+        <h1>26° Circuito Ciclístico Nacional "ANGEL MIGUEL SANABRIA" 2025</h1>
+        <h2>Clasificación Etapa - Circuito Tuta 60 KM</h2>
+    </div>
+    <div class="container mt-4">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <input type="text" id="filterBib" placeholder="Filtro por Número de Chip (Bib)" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="filterName" placeholder="Filtro por Nombre" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="filterCategory" placeholder="Filtro por Categoría" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="filterCity" placeholder="Filtro por Ciudad" class="form-control">
+            </div>
+        </div>
+        <button id="clearFilters" class="btn btn-secondary clear-btn">Limpiar Filtros</button>
+        <div class="table-responsive">
+            <table border="1" class="dataframe table table-striped table-hover">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th>Position</th>
+                        <th>Bib</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Team</th>
+                        <th>City</th>
+                        <th>Laps</th>
+                        <th>Time</th>
+                        <th>Speed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>17</td>
+                        <td>Wilmar Andrés Paredes Zapata</td>
+                        <td>Elite</td>
+                        <td>Team Medellin</td>
+                        <td>Bogota</td>
+                        <td>20</td>
+                        <td>1:15:02</td>
+                        <td>47,97</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>Diego Andrés Camargo Pineda</td>
+                        <td>Elite</td>
+                        <td>Club Evolucion Tutense</td>
+                        <td>Tuta</td>
+                        <td>20</td>
+                        <td>+6</td>
+                        <td>47,91</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>59</td>
+                        <td>Jonathan Guatibonza</td>
+                        <td>Sub23</td>
+                        <td>Nu Colombia</td>
+                        <td>Paipa</td>
+                        <td>20</td>
+                        <td>+1:07</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>35</td>
+                        <td>Andres Libardo Mancipe Puin</td>
+                        <td>Elite</td>
+                        <td>Arepas Sumerced</td>
+                        <td>Ventaquemada</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>56</td>
+                        <td>Sebastian Albarracín Fonseca</td>
+                        <td>Sub23</td>
+                        <td>Team Boyaca es para</td>
+                        <td>Duitama</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>41</td>
+                        <td>Erin Fabian Espinel Baez</td>
+                        <td>Elite</td>
+                        <td>Familia Araque</td>
+                        <td>Soata</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>21</td>
+                        <td>David Camargo</td>
+                        <td>Elite</td>
+                        <td>Juan Ca Punta de Anca</td>
+                        <td>Sogamoso</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>24</td>
+                        <td>Edwin Alejandro Patiño Bello</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Sogamoso</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>109</td>
+                        <td>Johan Steven Rubio Largo</td>
+                        <td>Sub23</td>
+                        <td>Nu Colombia</td>
+                        <td>Tibana</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>69</td>
+                        <td>Carlos Andrés Castro Nope</td>
+                        <td>Sub23</td>
+                        <td>Team Galliz Ebrea</td>
+                        <td>Tunja</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>60</td>
+                        <td>Victor Manuel contreras Pinzon</td>
+                        <td>Sub23</td>
+                        <td>Nu Colombia</td>
+                        <td>Villapinzon</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>78</td>
+                        <td>Edwin Fabián Rubio Sierra</td>
+                        <td>Sub23</td>
+                        <td>Club Santa Barbara Sora</td>
+                        <td>Samaca</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>55</td>
+                        <td>Edwar Rondón Buitrago</td>
+                        <td>Sub23</td>
+                        <td>Team Tibana Umbita</td>
+                        <td>Tunja</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>62</td>
+                        <td>Andrés Sebastián Umbarila Santana</td>
+                        <td>Sub23</td>
+                        <td>SHC Cycling Team</td>
+                        <td>Chocontá</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>18</td>
+                        <td>Juan José Moreno Garzón</td>
+                        <td>Elite</td>
+                        <td>Villa</td>
+                        <td>pinzón</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>36</td>
+                        <td>Yeison Sebastian Reyes Ortega</td>
+                        <td>Elite</td>
+                        <td>Orgullo Paisa</td>
+                        <td>Ramiriqu</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>85</td>
+                        <td>Robert andres Plazas Fonseca</td>
+                        <td>Sub23</td>
+                        <td>Team Galliz Ebrea</td>
+                        <td>Duitama</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>20</td>
+                        <td>Nicholas Tabares</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Denver,</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>8</td>
+                        <td>Ivan Arturo Ojeda Solano</td>
+                        <td>Elite</td>
+                        <td>Juan Ca Punta de Anca</td>
+                        <td>Beteitiva</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>75</td>
+                        <td>Camilo Quintero</td>
+                        <td>Sub23</td>
+                        <td>Team EFCSC Siachoque</td>
+                        <td>Oicata</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>72</td>
+                        <td>Camilo Alfonso Alvarez Cuy</td>
+                        <td>Sub23</td>
+                        <td>El Gran Pollo</td>
+                        <td>Santa Rosa de</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,27</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>65</td>
+                        <td>Norberto Téllez Diaz</td>
+                        <td>Sub23</td>
+                        <td>SHC Cycling Team</td>
+                        <td>Suesca</td>
+                        <td>20</td>
+                        <td>+1:12</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>61</td>
+                        <td>Juan Sebastian Pinilla Bolivar</td>
+                        <td>Sub23</td>
+                        <td>GW Erco Shimano</td>
+                        <td>Arcabuco</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>4</td>
+                        <td>Oscar Sevilla Ribera</td>
+                        <td>Elite</td>
+                        <td>Team Medellin</td>
+                        <td>Bogotá</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>108</td>
+                        <td>Juan David Urian Caro</td>
+                        <td>Sub23</td>
+                        <td>Team Sistecredito</td>
+                        <td>Soraca</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>19</td>
+                        <td>Maicol virguez</td>
+                        <td>Elite</td>
+                        <td>Talentos Chiquiquireños</td>
+                        <td>Saboya boyacá</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>6</td>
+                        <td>HEINER PARRA</td>
+                        <td>Elite</td>
+                        <td>Canel`s Java Mexico</td>
+                        <td>Tunja</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>57</td>
+                        <td>Juan David Sarmiento Galindo</td>
+                        <td>Sub23</td>
+                        <td>Team Boyaca es para</td>
+                        <td>Tunja</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>15</td>
+                        <td>Oscar Hernán Fernández González</td>
+                        <td>Elite</td>
+                        <td>Pallace Sweet</td>
+                        <td>Villapinzón</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>1</td>
+                        <td>Alba Bolivar Juan Diego</td>
+                        <td>Elite</td>
+                        <td>Nu Colombia</td>
+                        <td>Tuta</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>5</td>
+                        <td>Cristian Camilo Muñoz Lancheros</td>
+                        <td>Elite</td>
+                        <td>Nu Colombia</td>
+                        <td>Ventaquemada</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>26</td>
+                        <td>Juan Carlos Cruz Muñoz</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Ramiriqu</td>
+                        <td>20</td>
+                        <td>M.T.</td>
+                        <td>47,21</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>83</td>
+                        <td>Nicolas Guzmán</td>
+                        <td>Sub23</td>
+                        <td>Hstal Latorre</td>
+                        <td>Bogota</td>
+                        <td>20</td>
+                        <td>+1:18</td>
+                        <td>47,15</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>7</td>
+                        <td>Robinson López Rivera</td>
+                        <td>Elite</td>
+                        <td>GW Erco Shimano</td>
+                        <td>Gw erco</td>
+                        <td>20</td>
+                        <td>+1:41</td>
+                        <td>46,92</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>54</td>
+                        <td>David Sebastián Riaño Pineda</td>
+                        <td>Sub23</td>
+                        <td>Team Tibana Umbita</td>
+                        <td>Tunja</td>
+                        <td>20</td>
+                        <td>+1:44</td>
+                        <td>46,88</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>67</td>
+                        <td>Yeferson Johani Olivares fuentes</td>
+                        <td>Sub23</td>
+                        <td>Team Boyaca es para</td>
+                        <td>Socha</td>
+                        <td>20</td>
+                        <td>+2:08</td>
+                        <td>46,64</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>3</td>
+                        <td>Wilson Enrique Rodríguez Amezquita</td>
+                        <td>Elite</td>
+                        <td>Club Evolucion Tutense</td>
+                        <td>Tuta</td>
+                        <td>19</td>
+                        <td>+1:08</td>
+                        <td>44,89</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>52</td>
+                        <td>Anderson Castro</td>
+                        <td>Sub23</td>
+                        <td>Club Evolucion Tutense</td>
+                        <td>Tuta</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>51</td>
+                        <td>Yeferson Cebastian Camargo Pineda</td>
+                        <td>Sub23</td>
+                        <td>Team Petrolike</td>
+                        <td>TUTA</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>58</td>
+                        <td>Juan David Cardenas Suesca</td>
+                        <td>Sub23</td>
+                        <td>Team Tibana Umbita</td>
+                        <td>Tunja</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>77</td>
+                        <td>Kevin andres Ducuara vanegas</td>
+                        <td>Sub23</td>
+                        <td>Team EFCSC Siachoque</td>
+                        <td>Tunja</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>76</td>
+                        <td>Edison Ferney Sanabria Galindo</td>
+                        <td>Sub23</td>
+                        <td>Team EFCSC Siachoque</td>
+                        <td>Siachoque</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>40</td>
+                        <td>Cesar Nicolas Paredes Avellaneda</td>
+                        <td>Elite</td>
+                        <td>Team Hino</td>
+                        <td>Bogota</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>86</td>
+                        <td>Miller Esteban Plazas Camargo</td>
+                        <td>Sub23</td>
+                        <td>Team Galliz Ebrea</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>87</td>
+                        <td>Santiago Andres Robayo joya</td>
+                        <td>Sub23</td>
+                        <td>Team Galliz Ebrea</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>13</td>
+                        <td>Jhon haider Guatibonza Becerra</td>
+                        <td>Elite</td>
+                        <td>Familia Guatibonza</td>
+                        <td>Paipa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>88</td>
+                        <td>Luis Miguel socha rojas</td>
+                        <td>Sub23</td>
+                        <td>EBSA</td>
+                        <td>Mongua</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>32</td>
+                        <td>Ferney Alexander López Maldonado</td>
+                        <td>Elite</td>
+                        <td>Team Bioboy Bolsa</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>11</td>
+                        <td>José Misael Urian Caro</td>
+                        <td>Elite</td>
+                        <td>Team Sistecredito</td>
+                        <td>Soracá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>91</td>
+                        <td>Nicolas David leguizamon Fernández</td>
+                        <td>Sub23</td>
+                        <td>Familia Leguizamon</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>23</td>
+                        <td>Diego fernando cuervo</td>
+                        <td>Elite</td>
+                        <td>Juan Ca Punta de Anca</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>14</td>
+                        <td>Juan Pablo Sossa</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>66</td>
+                        <td>Steban Lizca Carpeta</td>
+                        <td>Sub23</td>
+                        <td></td>
+                        <td>Zipaquirá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>73</td>
+                        <td>Hugo Alejandro Álvarez cuy</td>
+                        <td>Sub23</td>
+                        <td>El Gran Pollo</td>
+                        <td>Santa Rosa de</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>81</td>
+                        <td>Joseph Florez Casas</td>
+                        <td>Sub23</td>
+                        <td>Familia Florez</td>
+                        <td>Bogotá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>94</td>
+                        <td>Jorge Alejandro Rios Jimenez</td>
+                        <td>Sub23</td>
+                        <td>Alcaldia Tibasosa Club</td>
+                        <td>Tibasosa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>103</td>
+                        <td>Camilo Esteban Fernández Guevara</td>
+                        <td>Sub23</td>
+                        <td>Familia Fernandez</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>68</td>
+                        <td>Juan Diego Estupiñan Díaz</td>
+                        <td>Sub23</td>
+                        <td>Team Galliz Ebrea</td>
+                        <td>Socha</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>79</td>
+                        <td>Jonathan David Sánchez Torres</td>
+                        <td>Sub23</td>
+                        <td>Team Bioboy Bolsa</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>110</td>
+                        <td>Juan Diego Mendivelso Jimenez</td>
+                        <td>Sub23</td>
+                        <td>Autorepuestos HM</td>
+                        <td>Soata</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>106</td>
+                        <td>Cristian Camilo Espejo Castiblanco</td>
+                        <td>Sub23</td>
+                        <td>Club Labranza del So</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>104</td>
+                        <td>Carlos Arturo Matamoros parra</td>
+                        <td>Sub23</td>
+                        <td>Club Santa Barbara Sora</td>
+                        <td>Sora</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>9</td>
+                        <td>Jeisson Ferney Casallas Rincon</td>
+                        <td>Elite</td>
+                        <td>Avinal Carmen de Viboral</td>
+                        <td>Tibana</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>97</td>
+                        <td>Jhojan Sneider Quintero Bernal</td>
+                        <td>Sub23</td>
+                        <td>Familia Quintero</td>
+                        <td>Jenesano</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>22</td>
+                        <td>Diego Armando Soraca cabezas</td>
+                        <td>Elite</td>
+                        <td>Juan Ca Punta de Anca</td>
+                        <td>Firavitoba</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>71</td>
+                        <td>Brayan David Ruiz García</td>
+                        <td>Sub23</td>
+                        <td>Team Tibana Umbita</td>
+                        <td>TUNJA</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>63</td>
+                        <td>Emerson Felipe Meneses Galindo</td>
+                        <td>Sub23</td>
+                        <td>SHC Cycling Team</td>
+                        <td>Villapinzon</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>34</td>
+                        <td>Juan Manuel Castro</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Paipa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>101</td>
+                        <td>Andrés Felipe Ferrucho Bayona</td>
+                        <td>Sub23</td>
+                        <td>Club Colombielas</td>
+                        <td>Sogamoso</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>95</td>
+                        <td>Jorge Eliecer Rincón Albarracin</td>
+                        <td>Sub23</td>
+                        <td>Corrales</td>
+                        <td>Busbanzá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>38</td>
+                        <td>Jose Oliverio Patiño Castaño</td>
+                        <td>Elite</td>
+                        <td>Club MR2 Paipa</td>
+                        <td>Paipa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>90</td>
+                        <td>Manuel Santiago Hernández Gómez</td>
+                        <td>Sub23</td>
+                        <td>Familia Hernández</td>
+                        <td>Ventaquemada</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>100</td>
+                        <td>andres felipe cangrejo vanegas</td>
+                        <td>Sub23</td>
+                        <td>Familia Cangrejo</td>
+                        <td>cucaita</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>84</td>
+                        <td>Wilmer alejandro perez garcia</td>
+                        <td>Sub23</td>
+                        <td>Team Galliz Ebrea</td>
+                        <td>Socha</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>96</td>
+                        <td>Jhoan Stiven Pineda Forero</td>
+                        <td>Sub23</td>
+                        <td>Club Santa Barbara Sora</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>25</td>
+                        <td>John Esteban Medina Pérez</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>99</td>
+                        <td>Edwin Fernando Rios Mesa</td>
+                        <td>Sub23</td>
+                        <td>Team Nobsa</td>
+                        <td>Sogamoso</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>92</td>
+                        <td>Wilson fernando carvajal albarracin</td>
+                        <td>Sub23</td>
+                        <td>Club Santiago de Tunja</td>
+                        <td>Tunja</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>102</td>
+                        <td>Andrés Noy Pedrozo</td>
+                        <td>Sub23</td>
+                        <td>Team Nobsa</td>
+                        <td>Sogamoso</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>37</td>
+                        <td>Billy Romero Forero</td>
+                        <td>Elite</td>
+                        <td>SHC Cycling Team</td>
+                        <td>Suesca</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>33</td>
+                        <td>Javier Gustavo Castel Segura</td>
+                        <td>Elite</td>
+                        <td>Amigos de las Bielas</td>
+                        <td>Moniquira</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>39</td>
+                        <td>Nicolas Lopez Restrepo</td>
+                        <td>Elite</td>
+                        <td>Team 530</td>
+                        <td>Paipa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>98</td>
+                        <td>Jhon Esneider Bohorquez Contreras</td>
+                        <td>Sub23</td>
+                        <td>Team Isicarcolisiones</td>
+                        <td>Tunja</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>89</td>
+                        <td>Juan Esteban Ulloa Romero</td>
+                        <td>Sub23</td>
+                        <td>Familia Ulloa</td>
+                        <td>Tunja</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>28</td>
+                        <td>Andrés Felipe Beltrán Salazar</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Zipaquirá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>30</td>
+                        <td>Maicol Stiven Hetnandez Hernandez</td>
+                        <td>Elite</td>
+                        <td>Team KSPO</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>105</td>
+                        <td>Carlos Mario Pinto Infante</td>
+                        <td>Sub23</td>
+                        <td>Paipa</td>
+                        <td>Belén-Boyacá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>31</td>
+                        <td>Kevin Andres Alvarado Sanchez</td>
+                        <td>Elite</td>
+                        <td>Motocar Alvarado</td>
+                        <td>Saboyá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>80</td>
+                        <td>Jose Alejandro Martinez Zuluaga</td>
+                        <td>Sub23</td>
+                        <td>Team EFCSC Siachoque</td>
+                        <td>Tunja</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNF</td>
+                        <td>29</td>
+                        <td>Javier Dario Suárez Figueroa</td>
+                        <td>Elite</td>
+                        <td>Guerreros Paipa</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>10</td>
+                        <td>Diego German Dueñas Gomez</td>
+                        <td>Elite</td>
+                        <td>Club Kronos</td>
+                        <td>Bogotá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>12</td>
+                        <td>Brayan Alberto Baez Vanegas</td>
+                        <td>Elite</td>
+                        <td>Team Zapien</td>
+                        <td>Bogota</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>16</td>
+                        <td>Vladimir Yesid López Gil</td>
+                        <td>Elite</td>
+                        <td></td>
+                        <td>Bogota</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>27</td>
+                        <td>Faber Manuel Cucaita Morales</td>
+                        <td>Elite</td>
+                        <td>Orgullo Santarroseño</td>
+                        <td>Santa Rosa de</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>53</td>
+                        <td>Brayan Estiven Molano Alvarado</td>
+                        <td>Sub23</td>
+                        <td>Team Boyaca es para</td>
+                        <td>Tibasosa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>64</td>
+                        <td>Sergio Emiliano Matamoros González</td>
+                        <td>Sub23</td>
+                        <td>Drogueria Farma Life</td>
+                        <td>Bogotá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>70</td>
+                        <td>Alejandro Peña Rodríguez</td>
+                        <td>Sub23</td>
+                        <td></td>
+                        <td>Paipa</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>74</td>
+                        <td>Johan Sneider Hernández Fernández</td>
+                        <td>Sub23</td>
+                        <td>Club Colombielas</td>
+                        <td>Sogamoso</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>82</td>
+                        <td>Luis Angel Sánchez Parra</td>
+                        <td>Sub23</td>
+                        <td>Canapro</td>
+                        <td>Bogotá</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>93</td>
+                        <td>Juan Pablo rincón ovalle</td>
+                        <td>Sub23</td>
+                        <td>Club Daniel Rincon</td>
+                        <td>Duitama</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>107</td>
+                        <td>Cristian dario maldonado maldonado</td>
+                        <td>Sub23</td>
+                        <td>Club Colombielas</td>
+                        <td>Pesca</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.querySelector('table');
+            const rows = table.querySelectorAll('tbody tr');
+            const inputs = {
+                bib: document.getElementById('filterBib'),
+                name: document.getElementById('filterName'),
+                category: document.getElementById('filterCategory'),
+                city: document.getElementById('filterCity')
+            };
+            const clearBtn = document.getElementById('clearFilters');
+
+            function filterTable() {
+                const filters = {
+                    bib: inputs.bib.value.toLowerCase(),
+                    name: inputs.name.value.toLowerCase(),
+                    category: inputs.category.value.toLowerCase(),
+                    city: inputs.city.value.toLowerCase()
+                };
+
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    const bib = cells[1] ? cells[1].textContent.toLowerCase() : '';
+                    const name = cells[2] ? cells[2].textContent.toLowerCase() : '';
+                    const category = cells[3] ? cells[3].textContent.toLowerCase() : '';
+                    const city = cells[5] ? cells[5].textContent.toLowerCase() : '';
+
+                    const show = (filters.bib === '' || bib.includes(filters.bib)) &&
+                                 (filters.name === '' || name.includes(filters.name)) &&
+                                 (filters.category === '' || category.includes(filters.category)) &&
+                                 (filters.city === '' || city.includes(filters.city));
+
+                    row.style.display = show ? '' : 'none';
+                });
+            }
+
+            // Mostrar todas las filas al inicio
+            rows.forEach(row => row.style.display = '');
+
+            // Eventos para filtros
+            Object.values(inputs).forEach(input => {
+                input.addEventListener('input', filterTable);
+            });
+
+            // Botón para limpiar filtros
+            clearBtn.addEventListener('click', () => {
+                Object.values(inputs).forEach(input => input.value = '');
+                filterTable();
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
